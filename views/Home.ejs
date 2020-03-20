@@ -1,0 +1,16 @@
+<%- include ("partials/header") %>
+<div class="cH">
+    <h1>Welcome to our Homepage</h1>
+    <a class="new" href="/campgrounds/new">Add new Campground</a>
+    <% if(!currentUser){ %>
+    <a class="new" href="/login">LOGIN</a>
+    <a class="new" href="/register">Register</a>
+    <% }else{ %>
+    <a class="new" href="#">Signed in as <%=currentUser.username %></a>
+    <a class="new" href="/logout">LOGOUT</a>
+    <% } %>
+</div>   
+    <p>This is our Yelp camp Home page</p>
+    <a href="/campgrounds">Go to Campgrounds Page</a>
+
+<%- include ("partials/footer") %>

@@ -1,0 +1,33 @@
+<%- include ("../partials/header") %> 
+    
+<div class="cH">
+    <h1>This is our <%= campground.name %> campground </h1>
+    <a class="new" href="/campgrounds/new">Add new Campground</a>
+    <a class="new" href="/campgrounds">Home</a>
+    <% if(!currentUser){ %>
+        <a class="new" href="/login">LOGIN</a>
+        <a class="new" href="/register">Register</a>
+        <% }else{ %>
+        <a class="new" href="#">Signed in as <%=currentUser.username %></a>
+        <a class="new" href="/logout">LOGOUT</a>
+        <% } %>
+    </div>     
+<div class="contain test">
+        <div class="Images">
+            <h4> <%= campground.name %> </h4>
+            <img src="<%= campground.url %>">
+            <p><%= campground.description %></p>
+            <% campground.comment.forEach(function(comment){ %>
+                <p><strong><%= comment.author.username %></strong></p>
+                <p><%= comment.text %></p>
+            <% }) %>
+            <a href="/campgrounds/<%= campground._id %>/comments/new">Add a new comment</a>
+                <% if(currentUser && campground.author.id.equals(currentUser._id)){ %> 
+                <a href="/campgrounds/<%= campground._id %>/edit">Update this blog</a>
+                <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                    <button>Delete this blog</button>
+                </form>
+                <% } %>
+        </div>
+</div>
+<%- include ("../partials/footer") %>

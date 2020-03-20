@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+img{
+    height: 243px;
+    width: auto;
+}
+.Images{
+    float: left;
+    margin: 0 20px;
+}
+.contain{
+    margin: 0 10%;
+    width: auto;
+    height: 400px;
+}
+h4{
+    text-align: center;
+    text-transform: uppercase;
+}
+.trade{
+    text-align: center;
+    position: absolute;
+}
+.cH{
+    margin: 2% 10%;
+    margin-top: 0;
+    padding-left: 5px;
+    height: 160px;
+    background-color: #dfdfdf;
+    border: 10px solid #dfdfdf;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+body{
+    margin-top: 0;
+}
+.new{
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 4px 6px;
+    color: black;
+    background-color: #7474df;
+}
+.test{
+    margin: 100px;
+}

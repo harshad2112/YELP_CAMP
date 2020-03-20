@@ -1,0 +1,21 @@
+<%- include ("../partials/header") %>
+
+<div class="cH">
+    <h1>Update your campground</h1>
+    <a class="new" href="/campgrounds/<%= campground._id %>">BACK</a>
+    <a class="new" href="/campgrounds">Home</a>
+    <% if(!currentUser){ %>
+        <a class="new" href="/login">LOGIN</a>
+        <a class="new" href="/register">Register</a>
+        <% }else{ %>
+        <a class="new" href="#">Signed in as <%=currentUser.username %></a>
+        <a class="new" href="/logout">LOGOUT</a>
+        <% } %>
+    </div>       
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <input type="text" name="name" value="<%=campground.name %>">
+        <input type="url" value="<%=campground.url %>" name="imgURL">
+        <button>Update!</button>
+    </form>
+
+<%- include ("../partials/footer") %>

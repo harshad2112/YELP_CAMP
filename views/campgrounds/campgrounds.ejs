@@ -1,0 +1,24 @@
+<%- include ("../partials/header") %> 
+    
+<div class="cH">
+    <h1>This is the campground Page</h1>
+    <p>These are our Top campgrounds</p>
+    <a class="new" href="/campgrounds/new">Add new Campground</a>
+    <% if(!currentUser){ %>
+        <a class="new" href="/login">LOGIN</a>
+        <a class="new" href="/register">Register</a>
+        <% }else{ %>
+        <a class="new" href="#">Signed in as <%=currentUser.username %></a>
+        <a class="new" href="/logout">LOGOUT</a>
+        <% } %>
+    </div>     
+<div class="contain">
+    <% campgrounds.forEach(function(campground){ %>
+        <div class="Images">
+            <h4> <%= campground.name %> </h4>
+            <img src="<%= campground.url %>" >
+            <a href="/campgrounds/<%= campground._id %>">Read More</a>
+        </div>
+    <% }) %>
+</div>
+<%- include ("../partials/footer") %>

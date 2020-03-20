@@ -1,0 +1,19 @@
+<%- include ("../partials/header") %> 
+<div class="cH">
+    <h1>Sign-In Form</h1>
+    <a class="new" href="/campgrounds/new">Add new Campground</a>
+    <% if(!currentUser){ %>
+        <a class="new" href="/login">LOGIN</a>
+        <a class="new" href="/register">Register</a>
+        <% }else{ %>
+        <a class="new" href="#">Signed in as <%=currentUser.username %></a>
+        <a class="new" href="/logout">LOGOUT</a>
+        <% } %>
+    </div>   
+<form action="/login" method="POST">
+    <input type="text" placeholder="Username" name="username">
+    <input type="password" placeholder="password" name="password">
+    <button>Sign-in</button>
+</form>
+
+<%- include ("../partials/footer") %>
