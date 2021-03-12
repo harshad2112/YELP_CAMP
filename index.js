@@ -12,9 +12,10 @@ var express              = require("express"),
     seedDB               = require("./seeds"),
     campgroundsRouters   = require("./routers/campgrounds"),
     commentRouter        = require("./routers/comments"),
-    indexRouter          = require("./routers/index");
-
-    mongoose.connect("mongodb://localhost:27017/campgrounds", {useNewUrlParser: true, useUnifiedTopology: true});
+    indexRouter          = require("./routers/index"),
+    {MONGODB}              = require("./config.js");
+    mongoose.connect(MONGODB, {useNewUrlParser: true, useUnifiedTopology: true})
+    
 //seedDB();
 app.use(require("express-session")({
     secret: "Hi this is yelp camp app",
